@@ -1,0 +1,7 @@
+# exclude
+TinyMaix/doc/
+TinyMaix/examples/
+TinyMaix/tools/*.py
+TinyMaix/tools/h5/
+TinyMaix/tools/quant*
+TinyMaix/tools/tflite/
