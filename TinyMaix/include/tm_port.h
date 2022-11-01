@@ -27,7 +27,7 @@ limitations under the License.
 #define TM_OPT2             (2) //TODO
 
 /******************************* PORT CONFIG  ************************************/
-#define TM_ARCH         TM_ARCH_X86_SSE2
+#define TM_ARCH         TM_ARCH_CPU
 #define TM_OPT_LEVEL    TM_OPT0
 #define TM_MDL_TYPE     TM_MDL_INT8
 #define TM_FASTSCALE    (0)         //enable if your chip don't have FPU, may speed up 1/3, but decrease accuracy
@@ -49,9 +49,8 @@ limitations under the License.
 #define TM_DBGL()      TM_PRINTF("###L%d\n",__LINE__);
 
 /******************************* DBG TIME CONFIG  ************************************/
-#include <sys/time.h>
-#include <time.h>
-#define  TM_GET_US()       ((uint32_t)((uint64_t)clock()*1000000/CLOCKS_PER_SEC))
+extern uint32_t sysTick;
+#define  TM_GET_US()       ((uint32_t)sysTick*1000)
 
 #define TM_DBGT_INIT()     uint32_t _start,_finish;float _time;_start=TM_GET_US();
 #define TM_DBGT_START()    _start=TM_GET_US();
