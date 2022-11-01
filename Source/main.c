@@ -184,7 +184,7 @@ int main(void)
 {
 	UsartInit();
 	SystemClock_HSI_Init();
-	SysTick_Config(8000);
+	SysTick_Config(48000);
 	printf("sysclk:%d\n",RCM_ReadSYSCLKFreq());
 	
 	//TinyMaix BEGIN
@@ -271,7 +271,7 @@ void SystemClock_HSI_Init()
     RCM_EnableHSI();
 
     /** select HSI as SYSCLK */
-    RCM_ConfigSYSCLK(RCM_SYSCLK_SEL_HSI);
+    RCM_ConfigSYSCLK(RCM_SYSCLK_SEL_HSI48);
 
     /** reInitiatate the usart*/
     printf("sysSource = %d", RCM_ReadSYSCLKSource());

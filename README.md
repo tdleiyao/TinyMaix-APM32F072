@@ -28,7 +28,7 @@ https://github.com/tdleiyao/TinyMaix-APM32F072
 
 | config | mnist | Note |
 | ------ | ----- | ---- |
-| O0 CPU | 102   |      |
+| O0 CPU | 17    |      |
 
 
 ## Author
